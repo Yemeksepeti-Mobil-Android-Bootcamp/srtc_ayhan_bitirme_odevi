@@ -10,7 +10,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentLoginBinding
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
    // private val viewModel: LoginViewModel by viewModels()
@@ -37,6 +40,10 @@ class LoginFragment : Fragment() {
         }
         binding.loginButton.setOnClickListener {
            // login()
+            val intent = Intent(requireActivity(),MainActivity::class.java)
+
+            startActivity(intent)
+            requireActivity().finish()
         }
 
     }

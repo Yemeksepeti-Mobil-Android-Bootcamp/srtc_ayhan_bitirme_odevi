@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/onBoardingFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.onboarding.OnBoardingFragment"
@@ -25,4 +25,15 @@
         android:id="@+id/signupFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.auth.SignupFragment"
         android:label="SignupFragment" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
