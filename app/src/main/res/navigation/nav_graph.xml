@@ -22,5 +22,12 @@
         <argument
             android:name="categoryName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_restaurantFragment_to_restaurantDetailsFragment"
+            app:destination="@id/restaurantDetailsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/restaurantDetailsFragment"
+        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.restaurantdetail.RestaurantDetailsFragment"
+        android:label="RestaurantDetailsFragment" />
 </navigation>

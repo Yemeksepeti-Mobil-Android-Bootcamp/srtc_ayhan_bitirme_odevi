@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.Restaurant
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentRestaurantBinding
 import dagger.hilt.android.AndroidEntryPoint
