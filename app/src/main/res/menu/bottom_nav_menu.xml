@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item0"
+        android:id="@+id/homeFragment"
         android:title="menu_dashboard"
         android:icon="@drawable/ic_dashboard_white_24dp"/>
 
@@ -16,9 +16,9 @@
         android:title="menu_store"
         android:icon="@drawable/ic_store_white_24dp"/>
 
-    <item
-        android:id="@+id/item3"
-        android:title="menu_profile"
-        android:icon="@drawable/ic_person_outline_white_24dp"/>
+<!--    <item-->
+<!--        android:id="@+id/item3"-->
+<!--        android:title="menu_profile"-->
+<!--        android:icon="@drawable/ic_person_outline_white_24dp"/>-->
 
 </menu>
