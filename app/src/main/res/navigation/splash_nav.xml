@@ -18,13 +18,9 @@
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.auth.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_signupFragment"
-            app:destination="@id/signupFragment" />
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.auth.SignupFragment"
-        android:label="SignupFragment" />
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.splash.SplashFragment"
@@ -36,4 +32,8 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.auth.RegisterFragment"
+        android:label="RegisterFragment" />
 </navigation>
