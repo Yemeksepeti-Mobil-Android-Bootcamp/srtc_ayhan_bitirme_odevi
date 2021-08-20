@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.local.SharedPrefManager
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentOnBoardingBinding
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.ViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,11 +37,35 @@ class OnBoardingFragment : Fragment() {
 
     private fun initViews(){
         binding.onboardingNext.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)
+/*            findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)*/
+
+            binding.viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    if (position == 0) {
+                        binding.onboardingNext.setOnClickListener {
+                            binding.viewPager.currentItem = binding.viewPager.currentItem + 1
+                        }
+                    } else if (position == 2) {
+                        binding.onboardingNext.text = "Finish"
+                        binding.onboardingNext.setOnClickListener {
+                            SharedPrefManager(requireContext()).setOnboardingSeen()
+                            findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)
+
+                        }
+                    } else {
+                        binding.onboardingNext.text = "Next"
+                        binding.onboardingNext.setOnClickListener {
+                            binding.viewPager.currentItem =
+                                binding.viewPager.currentItem + 1
+                        }
+                        }
+                    }
+
+            })
         }
 
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

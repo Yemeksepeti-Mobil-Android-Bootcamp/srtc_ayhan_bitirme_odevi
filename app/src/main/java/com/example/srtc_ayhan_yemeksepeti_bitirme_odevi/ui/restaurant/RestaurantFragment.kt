@@ -1,20 +1,26 @@
 package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.restaurant
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.Restaurant
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.restaurant.Restaurant
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentRestaurantBinding
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class RestaurantFragment : Fragment() {
 
-    private lateinit var binding: FragmentRestaurantBinding
+    private lateinit var _binding: FragmentRestaurantBinding
+    private val viewModel: RestaurantViewModel by viewModels()
+
+    private var adapter = RestaurantsAdapter()
 
     private var restaurantsAdapter: RestaurantsAdapter = RestaurantsAdapter()
 
@@ -24,37 +30,39 @@ class RestaurantFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentRestaurantBinding.inflate(inflater, container, false)
+        _binding = FragmentRestaurantBinding.inflate(inflater, container, false)
         initViews()
-        return binding.root
+        return _binding.root
 
     }
 
     private fun initViews() {
-        restaurantsAdapter.setRestaurantsList(setFakeData())
-        binding.restaurantRecyclerView.layoutManager = GridLayoutManager(context, 2)
-        binding.restaurantRecyclerView.adapter = restaurantsAdapter
-
+        _binding.restaurantRecyclerView.layoutManager = GridLayoutManager(context, 2)
+        _binding.restaurantRecyclerView.adapter = restaurantsAdapter
+        getRestaurants()
     }
 
-    private fun setFakeData(): ArrayList<Restaurant> {
+    private fun getRestaurants() {
+        viewModel.getRestaurants().observe(viewLifecycleOwner, { response ->
+            when (response.status) {
+                Resource.Status.LOADING -> {
 
-        val fakeDataArray = ArrayList<Restaurant>()
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "McDonalds"))
-        fakeDataArray.add(Restaurant("String", "Arbys"))
-        fakeDataArray.add(Restaurant("String", "Ohannes Burger"))
-        fakeDataArray.add(Restaurant("String", "Maxwell Burger"))
-        fakeDataArray.add(Restaurant("String", "Burger Diyarı"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
-        fakeDataArray.add(Restaurant("String", "Burger King"))
+                }
+                Resource.Status.SUCCESS -> {
+                    viewModel.restaurantList = response.data?.restaurantList
+                    setRestaurants(viewModel.restaurantList)
+                    Log.d(TAG, "getRestaurants: success")
+                }
+                Resource.Status.ERROR -> {
+                    Log.d(TAG, "getRestaurants: ${response.message}")
+                }
+            }
+        })
+    }
 
-        return fakeDataArray
+    private fun setRestaurants(restaurantList: ArrayList<Restaurant>?) {
+        adapter.setRestaurantList(restaurantList)
+        _binding.restaurantRecyclerView.adapter = adapter
     }
 
 }

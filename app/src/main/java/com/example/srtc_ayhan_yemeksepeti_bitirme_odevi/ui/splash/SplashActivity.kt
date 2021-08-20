@@ -12,21 +12,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
-//    private fun getToken() : String?{
-//        return SharedPrefManager(applicationContext).getToken()
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-//        if(!getToken().isNullOrEmpty()){
-//            Log.v("token kontrol",getToken().toString())
-//            val intent = Intent(applicationContext, MainActivity::class.java)
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-//            startActivity(intent)
-//            super.finish()
-//            finish()
-//        }
     }
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.Category
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,19 +39,19 @@ class HomeFragment : Fragment() {
     private fun setFakeData(): ArrayList<Category> {
 
         val fakeDataArray = ArrayList<Category>()
-        fakeDataArray.add(Category("String", "Pide"))
-        fakeDataArray.add(Category("String", "Hamburger"))
-        fakeDataArray.add(Category("String", "Pizza"))
-        fakeDataArray.add(Category("String", "Suşi"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
-        fakeDataArray.add(Category("String", "Balık"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Burger"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Çiğ Köfte"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Pizza"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Balık ve Deniz Ürünleri"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Döner"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Makarna & Salata"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Mantu"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Kumpir"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Kokoreç"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Pilav"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Tavuk"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Waffle"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Uzak Doğu"))
 
         return fakeDataArray
     }

@@ -37,7 +37,6 @@ class LoginFragment : Fragment() {
 
     private fun initViews() {
 
-
         _binding.signUpButton.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
@@ -67,9 +66,6 @@ class LoginFragment : Fragment() {
                         }
                     }
                 })
-
         }
-
     }
-
 }

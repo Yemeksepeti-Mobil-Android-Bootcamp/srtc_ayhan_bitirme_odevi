@@ -18,4 +18,11 @@ class SharedPrefManager(context: Context) {
     fun getToken(): String? {
         return sharedPreferences.getString(TOKEN, "")
     }
+    fun setOnboardingSeen(){
+        sharedPreferences.edit().putBoolean("ONBOARDING",true).apply()
+    }
+
+    fun getOnboardingSeen() : Boolean{
+        return sharedPreferences.getBoolean("ONBOARDING",false)
+    }
 }

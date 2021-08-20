@@ -1,37 +1,56 @@
 package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.restaurant
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
-import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.Restaurant
+import com.bumptech.glide.Glide
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.restaurant.Restaurant
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.RestaurantCardBinding
 
-class RestaurantsAdapter: RecyclerView.Adapter<RestaurantsAdapter.RestaurantsViewHolder>() {
+class RestaurantsAdapter : RecyclerView.Adapter<RestaurantsAdapter.RestaurantsViewHolder>() {
 
-    private var restaurantsList = ArrayList<Restaurant>()
+    private var restaurantList = ArrayList<Restaurant>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantsAdapter.RestaurantsViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RestaurantsAdapter.RestaurantsViewHolder {
         val binding = RestaurantCardBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return RestaurantsViewHolder(binding)
     }
-    override fun onBindViewHolder(holder: RestaurantsViewHolder, position: Int) {
-        val restaurant = restaurantsList[position]
 
-        holder.binding.restaurantCardImg.setImageResource(R.drawable.hamburger)
-        holder.binding.restaurantCardText.text = restaurant.restaurantName
+    override fun onBindViewHolder(holder: RestaurantsViewHolder, position: Int) {
+        val restaurant = restaurantList[position]
+        Log.d(TAG, "onBindViewHolder: $restaurant")
+
+        //glide
+        Glide.with(holder.binding.restaurantCardImg.context)
+            .load(restaurant.image)
+            .into(holder.binding.restaurantCardImg)
+        holder.binding.restaurantCardText.text = restaurant.name
+
         holder.binding.restaurantCardView.setOnClickListener {
-            it.findNavController().navigate(R.id.action_restaurantFragment_to_restaurantDetailsFragment)
+            val action = RestaurantFragmentDirections.actionRestaurantFragmentToRestaurantDetailsFragment(restaurant.id)
+            it.findNavController()
+                .navigate(action)
         }
     }
-    override fun getItemCount(): Int = restaurantsList.size
 
-    fun setRestaurantsList(restaurant: ArrayList<Restaurant>){
-        restaurantsList = restaurant
+    override fun getItemCount(): Int = restaurantList.size
+
+
+    fun setRestaurantList(restaurantList: ArrayList<Restaurant>?) {
+        restaurantList?.let {
+            this.restaurantList = restaurantList
+            notifyDataSetChanged()
+        }
     }
 
-    inner class RestaurantsViewHolder(val binding: RestaurantCardBinding): RecyclerView.ViewHolder(binding.root)
+    inner class RestaurantsViewHolder(val binding: RestaurantCardBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
 }
