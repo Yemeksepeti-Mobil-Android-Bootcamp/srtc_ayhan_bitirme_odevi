@@ -5,8 +5,9 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.onboarding.FirstOnBoardingFragment
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.onboarding.SecondOnBoardingFragment
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.onboarding.ThirdOnBoardingFragment
 
-private const val FRAGMENT_COUNT = 2
+private const val FRAGMENT_COUNT = 3
 
 class ViewPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 
@@ -16,7 +17,8 @@ class ViewPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activi
         return when (position) {
             0 -> FirstOnBoardingFragment()
             1 -> SecondOnBoardingFragment()
-            else -> SecondOnBoardingFragment()
+            2 -> ThirdOnBoardingFragment()
+            else -> ThirdOnBoardingFragment()
         }
     }
 }

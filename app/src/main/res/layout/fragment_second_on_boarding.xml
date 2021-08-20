@@ -3,16 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.onboarding.SecondOnBoardingFragment"
+    tools:context=".ui.onboarding.FirstOnBoardingFragment"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_marginTop="150sp"
-        android:layout_marginBottom="100sp"
+    <ImageView
+        android:layout_marginTop="64dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="second onboarding fragment" />
+        android:src="@drawable/onboarding2"/>
+    <TextView
+        android:layout_marginTop="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="carefully"
+        android:textAllCaps="true"
+        android:textSize="24dp"
+        android:textColor="#F8A39D"
+        android:fontFamily="@font/josefinsans_medium"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="prepared"
+        android:textAllCaps="true"
+        android:textSize="24dp"
+        android:textColor="#F8A39D"
+        android:fontFamily="@font/josefinsans_medium"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
+    <TextView
+        android:padding="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam, arcu sit amet finibus finibus, libero est malesuada sapien, sed efficitur erat dui eu lacus."
+        android:textAllCaps="true"
+        android:textSize="14dp"
+        android:textColor="#F8A39D"
+        android:fontFamily="@font/josefinsans_medium"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 
 </LinearLayout>

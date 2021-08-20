@@ -5,6 +5,7 @@ import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.register.Reg
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.local.LocalDataSource
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.remote.RemoteDataSource
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.performAuthTokenNetworkOperation
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.performNetworkOperation
 import javax.inject.Inject
 
 class ApiRepository @Inject constructor(
@@ -32,4 +33,14 @@ class ApiRepository @Inject constructor(
             localDataSource.saveToken(it)
         }
     )
+
+    fun getRestaurants() =
+        performNetworkOperation {
+            remoteDataSource.getRestaurants()
+        }
+
+    fun getRestaurantById(id: String) =
+        performNetworkOperation {
+            remoteDataSource.getRestaurantById(id)
+        }
 }

@@ -3,7 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/activity_main.xml" value="0.36018518518518516" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/drawable/ic_dashboard_white_24dp.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/drawable/ic_multiline_chart_white_24dp.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/drawable/ic_person_outline_white_24dp.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/drawable/ic_store_white_24dp.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/activity_splash.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_basket.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_first_on_boarding.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_home.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_login.xml" value="0.19427083333333334" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_meal_details.xml" value="0.33" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_on_boarding.xml" value="0.2046875" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_profile.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_restaurant_details.xml" value="0.33" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_second_on_boarding.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_signup.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/fragment_third_on_boarding.xml" value="0.2046875" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/item_card.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/meal_item_card.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/layout/restaurant_card.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_bitirme_odevi/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36018518518518516" />
         <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_yemeksepeti_bitirme_odevi/app/src/main/res/drawable/button.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/srtc_/AndroidStudioProjects/srtc_ayhan_yemeksepeti_bitirme_odevi/app/src/main/res/drawable/item_card.xml" value="0.25" />
