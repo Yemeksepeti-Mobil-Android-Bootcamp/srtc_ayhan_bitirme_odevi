@@ -39,19 +39,20 @@ class HomeFragment : Fragment() {
     private fun setFakeData(): ArrayList<Category> {
 
         val fakeDataArray = ArrayList<Category>()
+        fakeDataArray.add(Category(R.drawable.hamburger, "All Restaurants"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Burger"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Çiğ Köfte"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Cig Kofte"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Pizza"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Balık ve Deniz Ürünleri"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Döner"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Makarna & Salata"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Mantı"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Kumpir"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Kokoreç"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Pilav"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Tavuk"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Fish and Seafood"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Turkish Doner"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Pasta & Salad"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Manti"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Baked Potato"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Kokorec"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Rice"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Chicken"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Waffle"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Uzak Doğu"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Eastern"))
 
         return fakeDataArray
     }

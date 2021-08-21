@@ -24,6 +24,9 @@ interface APIService {
     @GET("a/restaurant")
     suspend fun getRestaurants(): Response<RestaurantListResponse>
 
+    @GET("a/restaurant/cuisine/{category}")
+    suspend fun getRestaurantsByCategory(@Path("category") category: String): Response<RestaurantListResponse>
+
     @GET("a/restaurant/{id}")
     suspend fun getRestaurantById(@Path("id") id: String): Response<RestaurantResponse>
 

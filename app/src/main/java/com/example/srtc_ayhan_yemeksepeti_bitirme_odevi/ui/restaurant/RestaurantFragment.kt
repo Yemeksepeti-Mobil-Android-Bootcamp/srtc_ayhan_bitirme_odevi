@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.restaurant.Restaurant
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentRestaurantBinding
@@ -17,6 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class RestaurantFragment : Fragment() {
 
+    private val args: RestaurantFragmentArgs by navArgs()
     private lateinit var _binding: FragmentRestaurantBinding
     private val viewModel: RestaurantViewModel by viewModels()
 
@@ -39,7 +41,34 @@ class RestaurantFragment : Fragment() {
     private fun initViews() {
         _binding.restaurantRecyclerView.layoutManager = GridLayoutManager(context, 2)
         _binding.restaurantRecyclerView.adapter = restaurantsAdapter
-        getRestaurants()
+
+        if (args.categoryName == "All Restaurants") {
+            getRestaurants()
+        } else {
+            getRestaurantsByCategory()
+        }
+
+    }
+
+    private fun getRestaurantsByCategory() {
+
+        viewModel.getRestaurantsByCategory(args.categoryName)
+            .observe(viewLifecycleOwner, { response ->
+                when (response.status) {
+                    Resource.Status.LOADING -> {
+
+                    }
+                    Resource.Status.SUCCESS -> {
+                        viewModel.restaurantList = response.data?.restaurantList
+                        setRestaurants(viewModel.restaurantList)
+                        Log.d("burger", "getRestaurants: burger")
+                    }
+                    Resource.Status.ERROR -> {
+                        Log.d("burger", "getRestaurants: ${response.message}")
+                    }
+                }
+            })
+
     }
 
     private fun getRestaurants() {

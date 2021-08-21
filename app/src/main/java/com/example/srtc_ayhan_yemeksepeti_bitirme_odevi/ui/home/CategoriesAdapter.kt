@@ -27,7 +27,8 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoriesViewH
 // navigate home fragment to restaurant fragment
 
         holder.binding.itemCardView.setOnClickListener {
-            it.findNavController().navigate(R.id.action_homeFragment_to_restaurantFragment)
+            val action = HomeFragmentDirections.actionHomeFragmentToRestaurantFragment(category.categoryName)
+            it.findNavController().navigate(action)
         }
     }
 
