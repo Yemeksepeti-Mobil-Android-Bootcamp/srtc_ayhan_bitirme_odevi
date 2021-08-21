@@ -45,7 +45,7 @@ class HomeFragment : Fragment() {
         fakeDataArray.add(Category(R.drawable.hamburger, "Balık ve Deniz Ürünleri"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Döner"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Makarna & Salata"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Mantu"))
+        fakeDataArray.add(Category(R.drawable.hamburger, "Mantı"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Kumpir"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Kokoreç"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Pilav"))

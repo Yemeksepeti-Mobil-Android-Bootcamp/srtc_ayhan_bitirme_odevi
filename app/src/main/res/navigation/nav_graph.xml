@@ -45,11 +45,6 @@
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" />
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
-    <fragment
         android:id="@+id/mealDetailsFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.meal.MealDetailsFragment"
         android:label="fragment_meal_details"
@@ -64,4 +59,9 @@
             android:name="restaurantName"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.user.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user" />
 </navigation>

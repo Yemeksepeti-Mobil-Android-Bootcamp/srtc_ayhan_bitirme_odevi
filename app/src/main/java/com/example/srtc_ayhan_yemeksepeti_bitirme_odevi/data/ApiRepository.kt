@@ -20,9 +20,6 @@ class ApiRepository @Inject constructor(
             localDataSource.saveToken(it)
         }
     )
-    fun checkToken(): String? {
-        return localDataSource.getToken()
-    }
     fun saveToken(token:String) = localDataSource.saveToken(token)
 
     fun register(request: RegisterRequest) = performAuthTokenNetworkOperation(
@@ -49,4 +46,7 @@ class ApiRepository @Inject constructor(
             remoteDataSource.getMealById(id)
         }
 
+    fun getUser() = performNetworkOperation {
+            remoteDataSource.getUser()
+    }
 }
