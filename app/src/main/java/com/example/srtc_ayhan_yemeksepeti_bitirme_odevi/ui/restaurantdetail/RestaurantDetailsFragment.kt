@@ -6,21 +6,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.meal.Meal
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentRestaurantDetailsBinding
-import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.restaurant.MealsAdapter
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RestaurantDetailsFragment : Fragment() {
+class RestaurantDetailsFragment : Fragment() , IMealOnClick {
 
     private val args: RestaurantDetailsFragmentArgs by navArgs()
     private lateinit var binding: FragmentRestaurantDetailsBinding
     private val viewModel: RestaurantDetailsViewModel by viewModels()
+
+    private var restaurantName = ""
 
     private var mealsAdapter: MealsAdapter = MealsAdapter()
 
@@ -51,7 +54,7 @@ class RestaurantDetailsFragment : Fragment() {
                 Resource.Status.SUCCESS -> {
                     val restaurant = it.data!!.data
                     setMeals(restaurant.meals)
-
+                    restaurantName = restaurant.name
                     binding.restaurantNameTextView.text = restaurant.name
                     binding.restaurantAddressTextView.text = restaurant.address
                     binding.deliveryInfoTextView.text = restaurant.deliveryInfo
@@ -68,8 +71,17 @@ class RestaurantDetailsFragment : Fragment() {
     }
 
     private fun setMeals(mealList: ArrayList<Meal>) {
+
+        mealsAdapter.setListener(this)
         mealsAdapter.setMealsList(mealList)
         binding.mealsRecyclerView.adapter = mealsAdapter
+
+    }
+
+    override fun onClick(mealId: String) {
+
+        val action = RestaurantDetailsFragmentDirections.actionRestaurantDetailsFragmentToMealDetailsFragment2(mealId, args.restaurantId, restaurantName)
+        findNavController().navigate(action)
     }
 
 

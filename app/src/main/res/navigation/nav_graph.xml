@@ -53,5 +53,15 @@
         android:id="@+id/mealDetailsFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.meal.MealDetailsFragment"
         android:label="fragment_meal_details"
-        tools:layout="@layout/fragment_meal_details" />
+        tools:layout="@layout/fragment_meal_details" >
+        <argument
+            android:name="mealId"
+            app:argType="string" />
+        <argument
+            android:name="restaurantId"
+            app:argType="string" />
+        <argument
+            android:name="restaurantName"
+            app:argType="string" />
+    </fragment>
 </navigation>

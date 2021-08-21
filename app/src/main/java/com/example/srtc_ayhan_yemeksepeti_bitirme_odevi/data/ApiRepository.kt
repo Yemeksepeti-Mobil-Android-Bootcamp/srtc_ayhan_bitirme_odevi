@@ -43,4 +43,10 @@ class ApiRepository @Inject constructor(
         performNetworkOperation {
             remoteDataSource.getRestaurantById(id)
         }
+
+    fun getMealById(id: String) =
+        performNetworkOperation {
+            remoteDataSource.getMealById(id)
+        }
+
 }

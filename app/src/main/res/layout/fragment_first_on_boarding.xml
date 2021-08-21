@@ -10,7 +10,8 @@
         android:layout_marginTop="64dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/onboarding1"/>
+        android:src="@drawable/onboarding1" />
+
     <TextView
         android:layout_marginTop="20sp"
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
         android:textColor="#F8A39D"
         android:fontFamily="@font/josefinsans_medium"
         android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
     <TextView
         android:layout_width="match_parent"
@@ -32,7 +33,7 @@
         android:textColor="#F8A39D"
         android:fontFamily="@font/josefinsans_medium"
         android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
     <TextView
         android:padding="12dp"
@@ -45,6 +46,6 @@
         android:textColor="#F8A39D"
         android:fontFamily="@font/josefinsans_medium"
         android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
 </LinearLayout>
