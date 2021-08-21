@@ -34,7 +34,10 @@ class RestaurantsAdapter : RecyclerView.Adapter<RestaurantsAdapter.RestaurantsVi
         holder.binding.restaurantCardText.text = restaurant.name
 
         holder.binding.restaurantCardView.setOnClickListener {
-            val action = RestaurantFragmentDirections.actionRestaurantFragmentToRestaurantDetailsFragment(restaurant.id)
+            val action =
+                RestaurantFragmentDirections.actionRestaurantFragmentToRestaurantDetailsFragment(
+                    restaurant.id
+                )
             it.findNavController()
                 .navigate(action)
         }

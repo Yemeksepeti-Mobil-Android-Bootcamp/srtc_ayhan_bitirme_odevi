@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.ItemIngredientCardBinding
 
-class IngredientsAdapter: RecyclerView.Adapter<IngredientsAdapter.IngredientsViewHolder>() {
+class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.IngredientsViewHolder>() {
 
     private var ingredientsList = ArrayList<String>()
 
@@ -27,14 +27,13 @@ class IngredientsAdapter: RecyclerView.Adapter<IngredientsAdapter.IngredientsVie
 
     override fun getItemCount(): Int = ingredientsList.size
 
-    fun setIngredientsList(ingredient: ArrayList<String>){
+    fun setIngredientsList(ingredient: ArrayList<String>) {
         ingredientsList = ingredient
     }
 
 
     inner class IngredientsViewHolder(val binding: ItemIngredientCardBinding) :
         RecyclerView.ViewHolder(binding.root)
-
 
 
 }

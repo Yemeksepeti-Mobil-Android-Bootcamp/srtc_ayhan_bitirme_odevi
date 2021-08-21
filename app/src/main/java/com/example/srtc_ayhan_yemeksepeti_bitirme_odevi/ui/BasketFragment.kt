@@ -1,10 +1,10 @@
 package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 
 class BasketFragment : Fragment() {
@@ -13,7 +13,6 @@ class BasketFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_basket, container, false)
     }
 

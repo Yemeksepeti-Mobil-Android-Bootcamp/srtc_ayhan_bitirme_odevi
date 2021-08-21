@@ -1,15 +1,16 @@
 package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.onboarding
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.local.SharedPrefManager
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentOnBoardingBinding
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.GateTransformation
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.ViewPagerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,11 +36,11 @@ class OnBoardingFragment : Fragment() {
         initViews()
     }
 
-    private fun initViews(){
+    private fun initViews() {
         binding.onboardingNext.setOnClickListener {
-/*            findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)*/
 
-            binding.viewPager.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback() {
+            binding.viewPager.registerOnPageChangeCallback(object :
+                ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     if (position == 0) {
@@ -59,13 +60,14 @@ class OnBoardingFragment : Fragment() {
                             binding.viewPager.currentItem =
                                 binding.viewPager.currentItem + 1
                         }
-                        }
                     }
+                }
 
             })
         }
 
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -75,7 +77,7 @@ class OnBoardingFragment : Fragment() {
         val adapter = ViewPagerAdapter(requireActivity())
         binding.viewPager.adapter = adapter
         binding.wormDotsIndicator.setViewPager2(binding.viewPager)
-        //binding.viewPager.setPageTransformer(GateTransformation())
+        binding.viewPager.setPageTransformer(GateTransformation())
     }
 
 }

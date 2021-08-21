@@ -2,18 +2,17 @@ package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.restaurantdetail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.meal.Meal
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.MealItemCardBinding
 
-class MealsAdapter: RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
+class MealsAdapter : RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
 
     private var mealsList = ArrayList<Meal>()
 
-    private var listener : IMealOnClick? = null
+    private var listener: IMealOnClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealsViewHolder {
         val binding = MealItemCardBinding
@@ -28,9 +27,9 @@ class MealsAdapter: RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
             .load(meal.mealImage)
             .into(holder.binding.mealCardImg)
         holder.binding.mealCardImg.setImageResource(R.drawable.menu_photo)
-        holder.binding.mealCardName.text= meal.mealName
-        holder.binding.mealCardDesc.text= meal.mealDesc
-        holder.binding.mealPrice.text= meal.mealPrice
+        holder.binding.mealCardName.text = meal.mealName
+        holder.binding.mealCardDesc.text = meal.mealDesc
+        holder.binding.mealPrice.text = meal.mealPrice
 
         holder.binding.mealItemCardView.setOnClickListener {
 
@@ -41,18 +40,19 @@ class MealsAdapter: RecyclerView.Adapter<MealsAdapter.MealsViewHolder>() {
 
     override fun getItemCount(): Int = mealsList.size
 
-    fun setMealsList(meal: ArrayList<Meal>){
+    fun setMealsList(meal: ArrayList<Meal>) {
         mealsList = meal
     }
 
-    fun setListener(listener : IMealOnClick){
+    fun setListener(listener: IMealOnClick) {
         this.listener = listener
     }
 
-    fun removeListener(){
+    fun removeListener() {
         this.listener = null
     }
 
-    inner class MealsViewHolder(val binding: MealItemCardBinding): RecyclerView.ViewHolder(binding.root)
+    inner class MealsViewHolder(val binding: MealItemCardBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
 }

@@ -8,7 +8,7 @@ import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.Category
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.ItemCardBinding
 
-class CategoriesAdapter: RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>(){
+class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>() {
 
     private var categoriesList = ArrayList<Category>()
 
@@ -33,8 +33,10 @@ class CategoriesAdapter: RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHo
 
     override fun getItemCount(): Int = categoriesList.size
 
-    fun setCategoriesList(categories: ArrayList<Category>){
+    fun setCategoriesList(categories: ArrayList<Category>) {
         categoriesList = categories
     }
-    inner class CategoriesViewHolder(val binding: ItemCardBinding): RecyclerView.ViewHolder(binding.root)
+
+    inner class CategoriesViewHolder(val binding: ItemCardBinding) :
+        RecyclerView.ViewHolder(binding.root)
 }
