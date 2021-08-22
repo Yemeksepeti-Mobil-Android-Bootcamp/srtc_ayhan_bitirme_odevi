@@ -58,10 +58,21 @@
         android:id="@+id/userFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.user.UserFragment"
         android:label="fragment_user"
-        tools:layout="@layout/fragment_user" />
+        tools:layout="@layout/fragment_user" >
+        <action
+            android:id="@+id/action_userFragment_to_userUpdateFragment"
+            app:destination="@id/userUpdateFragment" />
+        <action
+            android:id="@+id/action_userFragment_self"
+            app:destination="@id/userFragment" />
+    </fragment>
     <fragment
         android:id="@+id/orderFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.order.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" />
+    <dialog
+        android:id="@+id/userUpdateFragment"
+        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.user.UserUpdateFragment"
+        android:label="UserUpdateFragment" />
 </navigation>
