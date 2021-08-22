@@ -42,7 +42,7 @@ Bu proje Yemeksepeti, Kodkuyoruz ve Patika.dev işbirliğiyle yapılan Yemeksepe
 #### Profile and Profile Update
 -----
 
-<img src="./screenshots/LoginCategoryRestaurant.gif" height="500px" width="250px"/>
+<img src="./screenshots/ProfileUpdate.gif" height="500px" width="250px"/>
 
 
 
