@@ -32,7 +32,7 @@ Bu proje Yemeksepeti, Kodkuyoruz ve Patika.dev işbirliğiyle yapılan Yemeksepe
 #### Splash, Onboarding, Signup
 -----
 
-<img src="./screenshots/SplashOnBoardingAuth.gif" height="500px" width="250px"/>
+<img src="./screenshots/SplashOnboardingAuth.gif" height="500px" width="250px"/>
 
 #### Login, Categories, Restaurants, Meal Details
 -----
