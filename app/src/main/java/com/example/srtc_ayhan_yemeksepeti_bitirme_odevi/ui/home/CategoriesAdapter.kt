@@ -21,7 +21,7 @@ class CategoriesAdapter : RecyclerView.Adapter<CategoriesAdapter.CategoriesViewH
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
         val category = categoriesList[position]
 
-        holder.binding.itemCardImg.setImageResource(R.drawable.hamburger)
+        holder.binding.itemCardImg.setImageResource(category.categoryImage)
         holder.binding.itemCardText.text = category.categoryName
 
 // navigate home fragment to restaurant fragment

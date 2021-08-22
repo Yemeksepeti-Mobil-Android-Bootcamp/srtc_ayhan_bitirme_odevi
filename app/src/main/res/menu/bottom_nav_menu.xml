@@ -7,8 +7,8 @@
         android:icon="@drawable/ic_baseline_home_24"/>
 
     <item
-        android:id="@+id/basketFragment"
-        android:title="Basket"
+        android:id="@+id/orderFragment"
+        android:title="Orders"
         android:icon="@drawable/ic_baseline_shopping_basket_24"/>
 
     <item

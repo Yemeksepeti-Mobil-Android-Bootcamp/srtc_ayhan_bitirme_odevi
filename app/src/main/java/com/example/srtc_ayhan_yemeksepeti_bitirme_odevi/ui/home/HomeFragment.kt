@@ -39,20 +39,20 @@ class HomeFragment : Fragment() {
     private fun setFakeData(): ArrayList<Category> {
 
         val fakeDataArray = ArrayList<Category>()
-        fakeDataArray.add(Category(R.drawable.hamburger, "All Restaurants"))
+        fakeDataArray.add(Category(R.drawable.ic_food, "All Restaurants"))
         fakeDataArray.add(Category(R.drawable.hamburger, "Burger"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Cig Kofte"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Pizza"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Fish and Seafood"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Turkish Doner"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Pasta & Salad"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Manti"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Baked Potato"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Kokorec"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Rice"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Chicken"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Waffle"))
-        fakeDataArray.add(Category(R.drawable.hamburger, "Eastern"))
+        fakeDataArray.add(Category(R.drawable.cigkofte, "Cig Kofte"))
+        fakeDataArray.add(Category(R.drawable.pizza, "Pizza"))
+        fakeDataArray.add(Category(R.drawable.susi, "Fish and Seafood"))
+        fakeDataArray.add(Category(R.drawable.doner, "Turkish Doner"))
+        fakeDataArray.add(Category(R.drawable.makarna, "Pasta"))
+        fakeDataArray.add(Category(R.drawable.salad, "Salad"))
+        fakeDataArray.add(Category(R.drawable.manti, "Manti"))
+        fakeDataArray.add(Category(R.drawable.kumpir, "Baked Potato"))
+        fakeDataArray.add(Category(R.drawable.kokorec, "Kokorec"))
+        fakeDataArray.add(Category(R.drawable.tavuk, "Chicken"))
+        fakeDataArray.add(Category(R.drawable.waffle, "Waffle"))
+        fakeDataArray.add(Category(R.drawable.falafel, "Eastern"))
 
         return fakeDataArray
     }

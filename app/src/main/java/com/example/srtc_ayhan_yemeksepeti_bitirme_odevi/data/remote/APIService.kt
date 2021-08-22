@@ -3,6 +3,9 @@ package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.remote
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.login.LoginRequest
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.login.LoginResponse
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.meal.MealResponse
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.order.OrderAddRequest
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.order.OrderAddResponse
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.order.OrdersResponse
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.register.RegisterRequest
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.register.RegisterResponse
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.restaurant.RestaurantListResponse
@@ -38,4 +41,10 @@ interface APIService {
 
     @PUT("auth/updateDetails")
     suspend fun updateUser(@Body request : UserRequest) : Response<User>
+
+    @POST("a/order")
+    suspend fun postOrder(@Body request: OrderAddRequest) : Response<OrderAddResponse>
+
+    @GET("a/order")
+    suspend fun getOrder() : Response<OrdersResponse>
 }

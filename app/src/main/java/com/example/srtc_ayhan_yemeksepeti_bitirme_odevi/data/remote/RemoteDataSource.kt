@@ -1,6 +1,7 @@
 package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.remote
 
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.login.LoginRequest
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.order.OrderAddRequest
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.register.RegisterRequest
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.user.UserRequest
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.BaseDataSource
@@ -25,5 +26,7 @@ class RemoteDataSource @Inject constructor(
 
     suspend fun updateUser(request : UserRequest) = getResult { apiService.updateUser(request) }
 
+    suspend fun postOrder (request: OrderAddRequest) = getResult { apiService.postOrder(request) }
 
+    suspend fun getOrder() = getResult { apiService.getOrder() }
 }

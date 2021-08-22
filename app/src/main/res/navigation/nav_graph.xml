@@ -40,11 +40,6 @@
 
 
     <fragment
-        android:id="@+id/basketFragment"
-        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.BasketFragment"
-        android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" />
-    <fragment
         android:id="@+id/mealDetailsFragment"
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.meal.MealDetailsFragment"
         android:label="fragment_meal_details"
@@ -64,4 +59,9 @@
         android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.user.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
 </navigation>

@@ -1,6 +1,7 @@
 package com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.ui.meal
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.data.entity.order.OrderAddRequest
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentMealDetailsBinding
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +38,28 @@ class MealDetailsFragment : Fragment() {
     private fun initViews() {
         binding.ingredientsRecyclerView.layoutManager = LinearLayoutManager(context)
         getMealDetail()
+        initListeners()
+    }
+
+    private fun initListeners() {
+        binding.orderButton.setOnClickListener {
+            val orderAddRequest = OrderAddRequest(args.restaurantId, args.mealId)
+            viewModel.postOrder(
+                orderAddRequest
+            ).observe(viewLifecycleOwner, {
+                when (it.status) {
+                    Resource.Status.LOADING -> {
+
+                    }
+                    Resource.Status.SUCCESS -> {
+                       Log.v("meal","success")
+                    }
+                    Resource.Status.ERROR -> {
+                        Log.v("meal","{$it}")
+                    }
+                }
+            })
+        }
     }
 
     private fun getMealDetail() {
@@ -66,4 +90,5 @@ class MealDetailsFragment : Fragment() {
         ingredientsAdapter.setIngredientsList(ingredientList)
         binding.ingredientsRecyclerView.adapter = ingredientsAdapter
     }
+
 }
