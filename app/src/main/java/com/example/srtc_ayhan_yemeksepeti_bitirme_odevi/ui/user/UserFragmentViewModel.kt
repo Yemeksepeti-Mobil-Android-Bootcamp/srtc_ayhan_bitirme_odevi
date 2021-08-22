@@ -20,7 +20,4 @@ class UserFragmentViewModel @Inject constructor(
 
     fun getUser(): LiveData<Resource<UserResponse>> = apiRepository.getUser()
 
-    fun updateUser(request: UserRequest): LiveData<Resource<User>> {
-        return apiRepository.updateUser(request)
-    }
 }
