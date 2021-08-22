@@ -12,15 +12,12 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class UserFragmentViewModel @Inject constructor(
-
-    savedStateHandle: SavedStateHandle,
-    private val apiRepository: ApiRepository
+class UserUpdateFragmentViewModel @Inject constructor(
+    var savedStateHandle: SavedStateHandle,
+    private var apiRepository: ApiRepository
 ) : ViewModel() {
 
     fun getUser(): LiveData<Resource<UserResponse>> = apiRepository.getUser()
 
-    fun updateUser(request: UserRequest): LiveData<Resource<User>> {
-        return apiRepository.updateUser(request)
-    }
+    fun updateUser(request: UserRequest): LiveData<Resource<User>> = apiRepository.updateUser(request)
 }

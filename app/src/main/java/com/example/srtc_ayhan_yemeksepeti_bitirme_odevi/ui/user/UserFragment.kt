@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.R
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.databinding.FragmentUserBinding
 import com.example.srtc_ayhan_yemeksepeti_bitirme_odevi.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,10 +22,18 @@ class UserFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentUserBinding.inflate(inflater, container, false)
+        initListeners()
         getUserDetails()
         return _binding.root
+    }
+
+    private fun initListeners() {
+
+        _binding.UpdateButton.setOnClickListener {
+            findNavController().navigate(R.id.action_userFragment_to_userUpdateFragment)
+        }
     }
 
     private fun getUserDetails() {
@@ -35,16 +45,18 @@ class UserFragment : Fragment() {
                 Resource.Status.SUCCESS -> {
                     val user = it.data?.user
                     _binding.userName.text = user?.name
-                    Log.v("name bind","$user")
+                    Log.v("name bind", "$user")
                     _binding.userEmail.text = user?.email
                     _binding.userAddress.text = user?.address
                     _binding.userPhone.text = user?.phone
 
                 }
                 Resource.Status.ERROR -> {
-                    Log.v("name bind","$it")
+                    Log.v("name bind", "$it")
                 }
             }
         })
     }
+
+
 }

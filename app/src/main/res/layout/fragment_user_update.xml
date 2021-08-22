@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".ui.user.UserUpdateFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="@font/josefinsans_medium"
+                android:text="Update Profile"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/userNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginVertical="16dp"
+                android:autofillHints="true"
+                android:hint="user name"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <EditText
+                android:id="@+id/userEmailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:autofillHints="true"
+                android:hint="user email"
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <EditText
+                android:id="@+id/userAddressEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:autofillHints="true"
+                android:hint="user address"
+                android:inputType="text"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+            <EditText
+                android:id="@+id/userPhoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginVertical="16dp"
+                android:autofillHints="true"
+                android:hint="user phone"
+                android:inputType="phone"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/updateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/button"
+                android:backgroundTint="@color/pink"
+                android:text="Update"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
